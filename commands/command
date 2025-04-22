@@ -1,0 +1,24 @@
+#uptime for windows server powershell 
+Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName sgazpdecmcawn01 | Select-Object -ExpandProperty LastBootUpTime 
+
+
+# uptime in command prompt 
+systeminfo | find "System Boot Time" 
+
+
+#folder size 
+Get-ChildItem -Directory | ForEach-Object { 
+$folderSize = "{0:N2} MB" -f ((Get-ChildItem -Path $_.FullName -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB) 
+"{0} - {1}" -f $_.Name, $folderSize 
+}
+ 
+
+#recursive folder size 
+Get-ChildItem -Directory | ForEach-Object { 
+$folderSize = "{0:N2} MB" -f ((Get-ChildItem -Path $_.FullName -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB)
+"{0} - {1}" -f $_.Name, $folderSize 
+}
+
+#word search from a file
+Select-String -Path <path or filenames> -Pattern "<word to search>"
+
