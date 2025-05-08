@@ -22,3 +22,15 @@ $folderSize = "{0:N2} MB" -f ((Get-ChildItem -Path $_.FullName -Recurse | Measur
 #word search from a file
 Select-String -Path <path or filenames> -Pattern "<word to search>"
 
+
+#to check the token authentication for alfresco
+#url
+{
+  "userId": "admin",
+  "password": "admin"
+}‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍
+#use in body of the postman
+{
+  "userId": "admin",
+  "password": "admin"
+}‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍
